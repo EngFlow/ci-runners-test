@@ -1,4 +1,4 @@
-name: bazel (bento)
+name: bazel (vm bento)
 
 on:
   workflow_dispatch:
@@ -11,7 +11,7 @@ jobs:
     - "engflow-cluster=local"
     - "engflow-bento-allow-save=true"
     - "engflow-bento-vm-base-image=ubuntu-24.04"
-    - "engflow-bento-branch=master
+    - "engflow-bento-branch=main"
 
     steps:
     - uses: actions/checkout@v4
