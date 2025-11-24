@@ -1,0 +1,23 @@
+name: bazel (bento)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on:
+    - self-hosted
+    - "os=linux"
+    - "engflow-cluster=local"
+    - "engflow-bento-allow-save=true"
+    - "engflow-bento-vm-base-image=ubuntu-24.04"
+    - "engflow-bento-branch=master
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 1
+
+    - name: Run bazel
+      run: |
+        bazel info
